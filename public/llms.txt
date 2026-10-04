@@ -14,4 +14,3 @@ LinkedIn: https://www.linkedin.com/in/abdul-rahman-75366b343/
 - WeatherGPT — conversational weather assistant. https://github.com/rahmann292006-netizen/WeatherGPT
 - VANTACODES — code playground for rapid prototyping and sharing. https://github.com/rahmann292006-netizen/VANTACODES
 - MJ Fitness — fitness tracking with AI-driven insights. https://github.com/rahmann292006-netizen/MJ-Fitness
-- PackCheck AI — packing assistant using computer vision and language models. https://github.com/rahmann292006-netizen/PackCheck-AI

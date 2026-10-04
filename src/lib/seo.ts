@@ -6,7 +6,7 @@
 // has no confirmed Abdul-owned domain or profile image, so don't publish the
 // previous owner's canonical URL or social card.
 export const SITE_URL = import.meta.env["VITE_SITE_URL"]?.replace(/\/$/, "");
-export const OG_IMAGE = SITE_URL ? `${SITE_URL}/favicon.png` : undefined;
+export const OG_IMAGE = SITE_URL ? `${SITE_URL}/apple-touch-icon.png?v=20261004` : undefined;
 
 export const NAME = "Abdul Rahman";
 export const ABOUT_SHORT =

@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode, type RefObject } from "react";
 
-import me from "@/assets/me-abdul-clean.webp";
+import me from "@/assets/me-abdul-cutout.png";
 import { Button } from "@/components/ui/button";
 import { jsonLd, pageMeta, person, SITE_URL } from "@/lib/seo";
 import { cn } from "@/lib/utils";
@@ -52,7 +52,6 @@ const projects: { number: string; title: string; tags: string[]; blurb: string; 
   { number: "03", title: "WeatherGPT", tags: ["AI", "Agents"], blurb: "a weather assistant you can talk to.", code: "https://github.com/rahmann292006-netizen/WeatherGPT" },
   { number: "04", title: "VANTACODES", tags: ["App", "Experiments"], blurb: "a code playground for rapid prototyping and sharing.", code: "https://github.com/rahmann292006-netizen/VANTACODES" },
   { number: "05", title: "MJ Fitness", tags: ["AI", "App"], blurb: "personalized fitness tracking with AI-driven insights.", code: "https://github.com/rahmann292006-netizen/MJ-Fitness" },
-  { number: "06", title: "PackCheck AI", tags: ["AI", "Agents", "GenAI"], blurb: "smart packing assistant using computer vision and LLMs.", code: "https://github.com/rahmann292006-netizen/PackCheck-AI" },
 ];
 
 // The story canvas is CANVAS_VW wide and slides CANVAS_TRAVEL_VW across the
@@ -507,7 +506,7 @@ const timeline = [
   { year: "2024", title: "college.", line: "Computer Science Engineering.\nSMVIT, Raichur.\nfiguring out what I actually wanted to build.", doodle: "notebook" as const },
   { year: "2025", title: "the foundations.", line: "Python, statistics, linear algebra.\nlearning how machines actually think.\nless theory, more curiosity.", doodle: "code" as const },
   { year: "2026", title: "building in public.", line: "AI, GenAI, agents, and real projects.\nlearning by shipping instead of waiting to be ready.", doodle: "laptop" as const },
-  { year: "2026", title: "building things.", line: "Fitzy, WeatherGPT, PackCheck AI,\nMJ Fitness, VANTACODES and more.", doodle: "dumbbell" as const },
+  { year: "2026", title: "building things.", line: "Fitzy, WeatherGPT, MJ Fitness,\nVANTACODES and more.", doodle: "dumbbell" as const },
   { year: "2027", title: "going deeper.", line: "Agentic AI, GenAI engineering,\nDSA, systems and serious projects.", doodle: "nodes" as const },
   { year: "2028", title: "the plan.", line: "AI / Generative AI Engineer.\nBuild products. Ship ideas.\nKeep learning. Keep moving.", doodle: "globe" as const },
 ];

@@ -11,6 +11,6 @@ npm run dev
 
 ## Production metadata
 
-Set `VITE_SITE_URL` to Abdul's deployed site origin before release. Add Abdul's own transparent cutout at `src/assets/me-abdul.webp`, a matching profile icon for favicon and Apple touch icon, and real preview images for the projects before enabling those image references. The previous template's personal images must not be reused.
+Set `VITE_SITE_URL` to Abdul's deployed site origin before release. The main cutout is `src/assets/me-abdul.webp`; the favicon, Apple touch icon, and social preview use `public/apple-touch-icon.png`. Add the matching real project screenshots to `src/assets` before wiring them into the project cards.
 
 Run `npm run typecheck` and `npm run build` before deployment.
