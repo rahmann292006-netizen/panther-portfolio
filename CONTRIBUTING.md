@@ -12,12 +12,12 @@ The best way to use this repo is to fork it and turn it into **yours**.
    bun install   # or npm install
    bun run dev   # or npm run dev
    ```
-3. Swap in your own story, words, photos and projects. Most of the content lives in `src/routes/index.tsx` (the home page story) and `src/routes/work.tsx` (the project list), and the SEO details live in `src/lib/seo.ts`.
+3. Adapt the story, photos and projects in `src/routes/index.tsx`; SEO details live in `src/lib/seo.ts`.
 4. Change the thread, the objects and the colours until it feels like you.
 
 The code is MIT-licensed, so you're free to build on it. My photos, story, name and project screenshots aren't part of that license, so please replace them (see `LICENSE`). A link back to this repo is always appreciated.
 
-When it's live, I'd genuinely love to see it. Open an issue with the "Show your version" template, or tag me on [X](https://x.com/pnyk05).
+When it's live, open an issue with the "Show your version" template.
 
 ## Report a bug
 
@@ -36,7 +36,7 @@ Ideas for accessibility, performance, or making the code easier to adapt are ver
 3. Run `bun run build` (or `npm run build`) to make sure it still builds.
 4. Describe what you changed and why, with a screenshot for anything visual.
 
-Changes to the story, copy or design of my own site are my call, so please open an issue before working on those.
+Changes to the story, copy or design of this portfolio should be discussed in an issue first.
 
 ## Be kind
 

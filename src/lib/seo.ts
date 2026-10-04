@@ -1,45 +1,46 @@
 // Everything search engines and AI answer engines read about the site lives
 // here: titles, descriptions, the share image, and the structured data that
-// says who Nidhi is. None of it changes what's on screen.
+// says who Abdul Rahman is. None of it changes what's on screen.
 
-export const SITE_URL = "https://www.somehowliving.tech";
-export const OG_IMAGE = `${SITE_URL}/og.png`;
+// Set VITE_SITE_URL to the final deployed origin before release. This checkout
+// has no confirmed Abdul-owned domain or profile image, so don't publish the
+// previous owner's canonical URL or social card.
+export const SITE_URL = import.meta.env["VITE_SITE_URL"]?.replace(/\/$/, "");
+export const OG_IMAGE = SITE_URL ? `${SITE_URL}/favicon.png` : undefined;
 
-export const NAME = "Nidhi Prajapati";
+export const NAME = "Abdul Rahman";
 export const ABOUT_SHORT =
-  "Nidhi Prajapati is a software engineer building AI agents, voice AI and privacy-first web3 tools, currently working on AI agent reliability at Emergent (YC24).";
+  "Abdul Rahman (Panther) is a CSE student from Raichur, India, building AI agents, GenAI products, and experimental software. AI Engineer / GenAI Builder.";
 
 export const PROFILES = [
-  "https://www.linkedin.com/in/nidhi-prajapati-5b4483248/",
-  "https://github.com/SomehowLiving",
-  "https://x.com/pnyk05",
-  "https://devfolio.co/@nuna",
-  "https://www.npmjs.com/package/@onkey/sdk",
+  "https://www.linkedin.com/in/abdul-rahman-75366b343/",
+  "https://github.com/rahmann292006-netizen",
+  "https://x.com/rahman_aibuilds",
 ];
 
 export const person = {
   "@type": "Person",
-  "@id": `${SITE_URL}/#person`,
+  "@id": SITE_URL ? `${SITE_URL}/#person` : "#person",
   name: NAME,
-  alternateName: ["Nidhi", "somehowliving"],
-  url: SITE_URL,
-  image: OG_IMAGE,
-  email: "mailto:nidhiyp05@gmail.com",
-  jobTitle: "Software Engineer",
+  alternateName: ["Abdul Rahman", "Panther"],
+  ...(SITE_URL ? { url: SITE_URL } : {}),
+  ...(OG_IMAGE ? { image: OG_IMAGE } : {}),
+  email: "mailto:rahmann292006@gmail.com",
+  jobTitle: "AI Engineer / GenAI Builder",
   description: ABOUT_SHORT,
-  worksFor: { "@type": "Organization", name: "Emergent", description: "Y Combinator (YC24) company" },
-  alumniOf: { "@type": "CollegeOrUniversity", name: "Sir M. Visvesvaraya Institute of Technology (SMVIT)" },
-  address: { "@type": "PostalAddress", addressLocality: "Bengaluru", addressCountry: "IN" },
+  worksFor: { "@type": "Organization", name: "Student", description: "CSE Student" },
+  alumniOf: { "@type": "CollegeOrUniversity", name: "CSE Student" },
+  address: { "@type": "PostalAddress", addressLocality: "Raichur", addressCountry: "IN" },
   knowsAbout: [
     "AI agents",
-    "Agent reliability",
-    "Voice AI",
-    "Web3",
-    "Zero-knowledge proofs",
-    "Agentic payments",
-    "WebMCP",
-    "Privacy-first software",
+    "GenAI",
+    "LLMs",
+    "Agentic AI",
     "Full-stack development",
+    "AI products",
+    "Experiments",
+    "Automation",
+    "Open source",
   ],
   sameAs: PROFILES,
 };
@@ -53,22 +54,22 @@ export const jsonLd = (data: Record<string, unknown>) => ({
 // The standard set of tags for a page: title, description, canonical address
 // and the share card.
 export function pageMeta({ title, description, path }: { title: string; description: string; path: string }) {
-  const url = `${SITE_URL}${path}`;
+  const url = SITE_URL ? `${SITE_URL}${path}` : undefined;
   return {
     meta: [
       { title },
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
-      { property: "og:url", content: url },
-      { property: "og:image", content: OG_IMAGE },
-      { property: "og:image:width", content: "1200" },
-      { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "the anatomy of a curious developer — Nidhi Prajapati" },
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: description },
-      { name: "twitter:image", content: OG_IMAGE },
+      ...(url ? [{ property: "og:url", content: url }] : []),
+      ...(OG_IMAGE ? [
+        { property: "og:image", content: OG_IMAGE },
+        { property: "og:image:alt", content: "Abdul Rahman (Panther)" },
+        { name: "twitter:image", content: OG_IMAGE },
+      ] : []),
     ],
-    links: [{ rel: "canonical", href: url }],
+    links: url ? [{ rel: "canonical", href: url }] : [],
   };
 }

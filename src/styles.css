@@ -178,8 +178,8 @@
 }
 
 @keyframes float-object {
-  0%, 100% { transform: translateY(0) rotate(-4deg); }
-  50% { transform: translateY(-10px) rotate(3deg); }
+  0%, 100% { transform: translateY(0) rotate(-1.5deg); }
+  50% { transform: translateY(-4px) rotate(1.5deg); }
 }
 
 @keyframes draw-string { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
@@ -201,6 +201,23 @@
 }
 /* Out of focus until the thread arrives, then it sharpens into place. */
 .reveal:not([data-shown]) { opacity: 0; filter: blur(12px); transform: translateY(.5rem); transition-delay: 0s; }
+
+/* Journey checkpoints: small, varied marks with the same ink-and-paper feel. */
+.story-checkpoint {
+  border: 1px solid currentColor;
+  border-radius: 9999px;
+  background: var(--background);
+  color: var(--foreground);
+  box-shadow: 0 0 0 3px var(--background);
+}
+.story-checkpoint-diamond {
+  border-radius: 1px;
+  transform: rotate(45deg);
+}
+.story-checkpoint-ring {
+  border-width: 2px;
+  background: transparent;
+}
 
 /* Fade up into place; used for the intro so it runs on time even before JS. */
 @keyframes reveal { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }

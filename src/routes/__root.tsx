@@ -81,17 +81,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: `${NAME} — software engineer` },
+      { title: `${NAME} (Panther) — AI Engineer / GenAI Builder` },
       { name: "description", content: ABOUT_SHORT },
       { name: "author", content: NAME },
       { name: "robots", content: "index, follow, max-image-preview:large" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: NAME },
       { property: "og:locale", content: "en_IN" },
-      { property: "og:image", content: OG_IMAGE },
+      ...(OG_IMAGE ? [{ property: "og:image", content: OG_IMAGE }] : []),
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:creator", content: "@pnyk05" },
-      { name: "twitter:image", content: OG_IMAGE },
+      { name: "twitter:creator", content: "@rahman_aibuilds" },
+      ...(OG_IMAGE ? [{ name: "twitter:image", content: OG_IMAGE }] : []),
     ],
     links: [
       {
@@ -104,8 +104,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Newsreader:ital,wght@0,500;1,500&family=Patrick+Hand&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
-      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
+      { rel: "apple-touch-icon", href: "/favicon.png" },
     ],
     scripts:
       CLOUDFLARE_ANALYTICS_TOKEN && import.meta.env.PROD

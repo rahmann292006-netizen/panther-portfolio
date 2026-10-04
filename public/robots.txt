@@ -13,4 +13,3 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://www.somehowliving.tech/sitemap.xml
